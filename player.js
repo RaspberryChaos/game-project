@@ -8,11 +8,11 @@ class Player {
 
     displayStats() {
         if(this.number === 1) {
-            p1Div.innerHTML = `<h2>${this.name}</h2>
-            <p>Score = ${this.score}</p>`;
+           // p1Div.innerHTML += `<h2>${this.name}</h2>
+            //<p>Score = ${this.score}</p>`;
         } else {
-            p2Div.innerHTML = `<h2>${this.name}</h2>
-            <p>Score = ${this.score}</p>`;
+           // p2Div.innerHTML += `<h2>${this.name}</h2>
+            //<p>Score = ${this.score}</p>`;
         }
     }
 

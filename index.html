@@ -19,38 +19,62 @@
     <div class="wrapper">
         <canvas id="canvas1"></canvas>
     </div>
-    <div>
+
+    <div class = "background">
         <canvas id="canvas2"></canvas>
-    </div>
 
-    <div class="guessing">
-        <button id="vowel">Buy a Vowel</button>
-        <div>
-            <label for="guess">Guess a Letter!</label>
-            <input type="text" name="guess" id="guess">
-            <button id="guess-btn">Guess!</button>
+        <div id="mainContent">
+
+        <div id="commentary" class="flex">
+            <img src="imgs/speech-bubble.png" alt="">
+            <p>Waiting to be updated...</p>
         </div>
-        <p></p>
-        <button id="solve">Solve the Puzzle!</button>
-        <button id="next-btn">Next Puzzle</button>
-    </div>
 
-    <div class="wheel">
-        <img id="marker" src="imgs/marker.png" />
-        <img id="wheel" src="imgs/wheel.png" alt="wheel">
-        <button id="spin-btn">Spin the Wheel!</button>
-    </div>
-
-    <section id="players">
-        <div class="player1 active">
+        <div class="flex tbc">
+        <div class="guessing flex">
+            <button id="vowel">Buy a Vowel</button>
+            <div>
+                <label for="guess">Guess a Letter!</label>
+                <input type="text" name="guess" id="guess">
+                <button id="guess-btn">Guess!</button>
+            </div>
+            <p></p>
+            <button id="solve">Solve the Puzzle!</button>
+            <button id="next-btn">Next Puzzle</button>
+        </div>
+    
+        <section class="wheel">
+            <img id="marker" src="imgs/marker.png" />
+            <img id="wheel" src="imgs/wheel.png" alt="wheel">
+            <button id="spin-btn">Spin the Wheel!</button>
+        </section>
+    
+        <section id="players" class="flex">
             
-        </div>
-        <div class="player2">
-            
-        </div>
+            <div class="player1 active">
+                <img src="imgs/starfish.png" alt="" class="avatar"> 
+                <div>
+                    <h2>Player 1</h2>
+                    <p>Round Score = 0</p>
+                    <hr>
+                    <p>Total Score = 0</p> 
+                </div> 
+            </div>
+            <div class="player2">
+                <img src="imgs/dolphin.png" alt="" class="avatar">
+                <div>
+                    <h2>Player 2</h2>
+                    <p>Round Score = 0</p>
+                    <hr>
+                    <p>Total Score = 0</p> 
+                </div> 
+            </div>
     </section>
+</div>
+</div>
+</div>
 
-   
+    <script src="data.js"></script>
     <script src="puzzle.js"></script>
     <script src="player.js"></script>
     <script src="index.js"></script>

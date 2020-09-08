@@ -12,6 +12,7 @@ const guessP = document.querySelector('.guessing p');
 const solveBtn = document.getElementById('solve');
 const nextBtn = document.getElementById('next-btn');
 const roundDisplay = document.getElementById('round');
+const comment = document.querySelector('#commentary > p')
 let guessedLetters = [];
 let round = 1;
 
@@ -33,37 +34,7 @@ console.log(player1);
 console.log(player2);
 
 //Create new puzzle
-const films = [
-    {name:"Forrest Gump", category: "film"},
-    {name:"Home Alone", category: "film"},
-    {name:"Trainspotting", category: "film"},
-    {name:"The Lion King", category: "film"},
-    {name:"The Godfather", category: "film"},
-    {name:"Casablanca", category: "film"},
-    {name:"Fight Club", category: "film"},
-    {name:"Into the Wild", category: "film"},
-    {name:"Legally Blonde", category: "film"}
-];
 
-const books = [
-    {name: "War and Peace", category: "book"},
-    {name: "Animal Farm", category: "book"},
-    {name: "Of Mice and Men", category: "book"},
-    {name: "The Little Prince", category: "book"},
-    {name: "Gone Girl", category: "book"}
-]
-
-const mixed = [
-    {name: "Here Comes The Sun", category: "Song Title"},
-    {name: "Candle in the Wind", category: "Song Title"},
-    {name: "Hotel California", category: "Song Title"},
-    {name: "Usain Bolt", category: "Athlete"},
-    {name: "Roger Federer", category: "Athlete"},
-    {name: "Albus Dumbledore", category: "Fictional Character"},
-    {name: "Cersei Lannister", category: "Fictional Character"},
-    {name: "Bart Simpson", category: "Fictional Character"},
-    {name: "Luke Skywalker", category: "Fictional Character"}
-]
 /*
 function choosePuzzle() {
     
