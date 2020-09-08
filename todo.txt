@@ -1,0 +1,46 @@
+Wheel
+
+Create Wheel
+Make wheel spin
+Get wheel value
+Add sound
+
+Puzzle
+
+//Change puzzle when next level button is pressed
+//Display all letters when puzzle is solved
+Update bonus
+Long puzzles on two lines
+Add more puzzles 
+Add buy a vowel functionality
+
+
+Players
+
+Swap between players when one player loses
+Calculate points
+Update score
+Add bonus for solving puzzle
+Display winner after 3 rounds
+
+
+Home Page
+
+Make homepage
+Find out how to switch between pages
+
+Graphics
+
+Everything
+
+If time
+
+sounds (clapping, wheel spinning)
+avatars
+Add highscore to local storage
+bonus round
+
+
+
+
+

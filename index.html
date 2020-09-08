@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Fortune</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="myAudio">
+        <source src="sounds/Puzzle solve.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1 class="title">Wheel of Fortune</h1>
+    <h2 id="round">Round 1</h2>
+
+    <div class="wrapper">
+        <canvas id="canvas1"></canvas>
+    </div>
+    <div>
+        <canvas id="canvas2"></canvas>
+    </div>
+
+    <div class="guessing">
+        <button id="vowel">Buy a Vowel</button>
+        <div>
+            <label for="guess">Guess a Letter!</label>
+            <input type="text" name="guess" id="guess">
+            <button id="guess-btn">Guess!</button>
+        </div>
+        <p></p>
+        <button id="solve">Solve the Puzzle!</button>
+        <button id="next-btn">Next Puzzle</button>
+    </div>
+
+    <div class="wheel">
+        <img id="marker" src="imgs/marker.png" />
+        <img id="wheel" src="imgs/wheel.png" alt="wheel">
+        <button id="spin-btn">Spin the Wheel!</button>
+    </div>
+
+    <section id="players">
+        <div class="player1 active">
+            
+        </div>
+        <div class="player2">
+            
+        </div>
+    </section>
+
+   
+    <script src="puzzle.js"></script>
+    <script src="player.js"></script>
+    <script src="index.js"></script>
+    <script src="wheel.js"></script>
+</body>
+</html>
