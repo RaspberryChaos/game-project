@@ -106,20 +106,33 @@ class Puzzle {
     solve(guess) {
         if(guess.toLowerCase() === this.name) {
             round++;
-            roundDisplay.textContent = `Round ${round}`;
             currentPlayer.roundScore += this.bonus;
             this.solved = true;
             this.drawPuzzle();
             solvedMusic.play();
-            comment.textContent = `Well done ${currentPlayer.name}! You solved the puzzle! You win a bonus of ${this.bonus}! Click the Next Round button to continue.`;
-            nextBtn.style.display = 'block';
-            currentPlayer.displayStats();
-            //Add new game? button or next level
+            vowelBtn.style.display = 'none';
+            solveBtn.style.display = 'none';
+
+            if (round < 4) {
+                roundDisplay.textContent = `Round ${round}`;
+                comment.textContent = `Well done ${currentPlayer.name}! You solved the puzzle! You win a bonus of ${this.bonus}! Click the Next Round button to continue.`;
+                nextBtn.style.display = 'block';
+                currentPlayer.displayStats();
+            } else {
+                roundDisplay.textContent = `Game Over!`;
+                player1.updateTotalScore();
+                player2.updateTotalScore();
+                player1.displayStats();
+                player2.displayStats();
+                
+                player1.totalScore > player2.totalScore ?
+                    comment.textContent = `Congratulations ${player1.name}! You've won the game!` :
+                    comment.textContent = `Congratulations ${player2.name}! You've won the game!`;
+            }
+            
         } else {
-            console.log("Try again");
             if(this.bonus > 0) this.bonus -= 100;
             this.displayBonus();
-            console.log(this.bonus);
             comment.textContent = "Wrong answer. Try Again.";
         }
     

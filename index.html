@@ -14,7 +14,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <h1 class="title">Wheel of Fortune</h1>
+    <h1 class="title">Whale of Fortune</h1>
 
     <div class="wrapper">
         <canvas id="canvas1"></canvas>
@@ -22,44 +22,44 @@
         <p id="category"></p>
         <p id="bonus"></p>
         <button id="next-btn">Next Round</button>
+        <div class="btns flex center">
+            <button id="vowel">Buy a Vowel: €500</button>
+            <button id="solve">Solve the Puzzle!</button>
+        </div>
     </div>
 
     <div class = "background">
         <canvas id="canvas2"></canvas>
 
-        <div id="mainContent">
 
-        <div id="commentary" class="flex">
+        <section id="commentary" class="flex">
             <img src="imgs/bubble.png" alt="">
             <div>
-                <p class="comment">Welcome to the game! Good luck!</p>
+                <p class="comment">Welcome to the game! Good luck!
+                    Click 'Spin the Wheel' to start!
+                </p>
             </div>
-        </div>
+        </section>
 
         <img src="imgs/whale.png" alt="whale" id="whale">
 
-        <div class="flex">
-            <div class="guessing flex col">
-                <div class="flex col">
-                    <label for="guess">Guess a Letter!</label>
-                    <input type="text" name="guess" id="guess">
-                    <button id="guess-btn">Guess!</button>
-                 </div>
-                 <div>
-                    <button id="vowel">Buy a Vowel</button>
-                    <button id="solve">Solve the Puzzle!</button>
-                </div>
+        
+        <section class="guessing flex col">
+            <div class="flex col center guess-group">
+                <label for="guess">Guess a Letter!</label>
+                <input type="text" name="guess" id="guess">
+                <button id="guess-btn">Guess!</button>
             </div>
+            <button id="spin-btn">Spin the Wheel!</button>
+        </section>
     
         <section class="wheel">
             <img id="marker" src="imgs/marker.png" />
             <img id="wheel" src="imgs/wheel.png" alt="wheel">
-            <button id="spin-btn">Spin the Wheel!</button>
         </section>
     
         <section id="players" class="flex col">
-            
-            <div class="player1 active">
+            <div class="player player1 active">
                 <img src="imgs/starfish.png" alt="" class="avatar"> 
          <!--      <div>
                     <h2>Player 1</h2>
@@ -68,18 +68,10 @@
                     <p>Total Score = 0</p> 
                 </div>  --> 
             </div>
-            <div class="player2">
+            <div class="player player2">
                 <img src="imgs/dolphin.png" alt="" class="avatar">
-         <!--       <div>
-                    <h2>Player 2</h2>
-                    <p>Round Score = 0</p>
-                    <hr>
-                    <p>Total Score = 0</p> 
-                </div> --> 
             </div>
-    </section>
-</div>
-</div>
+        </section>
 </div>
 
 
@@ -97,14 +89,38 @@
                     <input type="text" name="player1name" id="player1name" value="Player 1">
                     <h4>Choose your Avatar</h4>
                     <div class="avatars">
-                        <img src="imgs/starfish.png" alt="Starfish">
-                        <img src="imgs/puffer-fish.png" alt="Puffer Fish">
-                        <img src="imgs/purple-fish.png" alt="Purple Fish">
-                        <img src="imgs/shark.png" alt="Shark">
-                        <img src="imgs/octopus.png" alt="Octopus">
-                        <img src="imgs/dolphin.png" alt="Dolphin">
-                        <img src="imgs/crab.png" alt="Crab">
-                        <img src="imgs/seahorse.png" alt="Seahorse">
+                        <label>
+                            <input type="radio" name="avatar1" value="starfish" checked="checked">
+                            <img src="imgs/starfish.png" alt="Starfish">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="puffer-fish">
+                            <img src="imgs/puffer-fish.png" alt="Puffer Fish">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="purple-fish">    
+                            <img src="imgs/purple-fish.png" alt="Purple Fish">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="shark">  
+                            <img src="imgs/shark.png" alt="Shark">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="octopus">    
+                            <img src="imgs/octopus.png" alt="Octopus">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="dolphin">
+                            <img src="imgs/dolphin.png" alt="Dolphin">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="crab">    
+                            <img src="imgs/crab.png" alt="Crab">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar1" value="seahorse">
+                            <img src="imgs/seahorse.png" alt="Seahorse">
+                        </label> 
                     </div>
                 </div>  
             </div>
@@ -115,14 +131,38 @@
                     <input type="text" name="player2name" id="player2name" value="Player 2">
                     <h4>Choose your Avatar</h4>
                     <div class="avatars">
-                        <img src="imgs/starfish.png" alt="Starfish">
-                        <img src="imgs/puffer-fish.png" alt="Puffer Fish">
-                        <img src="imgs/purple-fish.png" alt="Purple Fish">
-                        <img src="imgs/shark.png" alt="Shark">
-                        <img src="imgs/octopus.png" alt="Octopus">
-                        <img src="imgs/dolphin.png" alt="Dolphin">
-                        <img src="imgs/crab.png" alt="Crab">
-                        <img src="imgs/seahorse.png" alt="Seahorse">
+                        <label>
+                            <input type="radio" name="avatar2" value="starfish" >
+                            <img src="imgs/starfish.png" alt="Starfish">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="puffer-fish">
+                            <img src="imgs/puffer-fish.png" alt="Puffer Fish">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="purple-fish">    
+                            <img src="imgs/purple-fish.png" alt="Purple Fish">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="shark">  
+                            <img src="imgs/shark.png" alt="Shark">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="octopus" checked="checked">    
+                            <img src="imgs/octopus.png" alt="Octopus">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="dolphin">
+                            <img src="imgs/dolphin.png" alt="Dolphin">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="crab">    
+                            <img src="imgs/crab.png" alt="Crab">
+                        </label>
+                        <label>
+                            <input type="radio" name="avatar2" value="seahorse">    
+                            <img src="imgs/seahorse.png" alt="Seahorse">
+                        </label>    
                     </div>
                 </div> 
             </div>

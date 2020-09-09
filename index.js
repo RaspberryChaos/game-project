@@ -12,6 +12,7 @@ const guessBtn = document.getElementById('guess-btn');
 const category = document.getElementById('category');
 const bonus = document.getElementById('bonus');
 const solveBtn = document.getElementById('solve');
+const vowelBtn = document.getElementById('vowel');
 const nextBtn = document.getElementById('next-btn');
 const roundDisplay = document.getElementById('round');
 const comment = document.querySelector('.comment');
@@ -94,16 +95,22 @@ nextBtn.addEventListener('click', () => {
     comment.textContent = `Spin the wheel ${currentPlayer.name}!`;
     player1.updateTotalScore();
     player2.updateTotalScore();
+    vowelBtn.style.display = 'block';
+    solveBtn.style.display = 'block';
 });
 
 const name =  setupBtn.addEventListener('click', () => {
     playerSetup.style.display = "none";
-    initialisePlayers();
+    const avatar1 = document.querySelector('input[name = "avatar1"]:checked').value;
+    const avatar2 = document.querySelector('input[name = "avatar2"]:checked').value;
+    initialisePlayers(avatar1, avatar2);
+    console.log(avatar1);
+    console.log(avatar2);
 })
 
-function initialisePlayers() {
-    player1 = new Player(p1name.value, 1, myTurn = true, 'starfish');
-    player2 = new Player(p2name.value, 2, myTurn = false, 'dolphin');
+function initialisePlayers(avatar1,avatar2) {
+    player1 = new Player(p1name.value, 1, myTurn = true, avatar1);
+    player2 = new Player(p2name.value, 2, myTurn = false, avatar2);
     player1.displayStats();
     player2.displayStats();
     currentPlayer = player1;

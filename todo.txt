@@ -5,17 +5,18 @@ Wheel
 //Get wheel value
 Add sound
 disable/enable guess button
-code bankrupt and lose a turn
+//code bankrupt and lose a turn
 
 
 Puzzle
 
 //Change puzzle when next level button is pressed
 //Display all letters when puzzle is solved
-Update bonus
+//Update bonus
 Long puzzles on two lines
 Add more puzzles 
 Add buy a vowel functionality
+enter to guess letter
 
 
 Players
