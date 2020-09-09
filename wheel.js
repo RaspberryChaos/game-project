@@ -22,13 +22,19 @@ function wheelStopped() {
     wheel.style.transform = `rotate(${actualDeg}deg)`;
     console.log( actualDeg);
     let segment = Math.floor(actualDeg / 15);
-    console.log(segment);
-    console.log('Points',pointsArr[segment]);
+    //console.log(segment);
+    //console.log('Points',pointsArr[segment]);
     points = pointsArr[segment];
     if(typeof points === 'number') {
         comment.textContent = `For ${pointsArr[segment]} points, GUESS A LETTER!`;
+    } else if (points === "Bankrupt") {
+        comment.textContent = `BANKRUPT! Oh no, you lose all your points for this round! Unlucky!`;
+        currentPlayer.roundScore = 0;
+        currentPlayer.displayStats();
+        nextPlayer();
     } else {
-        comment.textContent = `Unlucky spin!`;
+        nextPlayer();
+        comment.textContent = `Unlucky spin - Lose a turn! Spin the wheel ${currentPlayer.name}!`;
     }
     guess.focus();
     

@@ -23,6 +23,7 @@
     transform: translate(-50%,-50%);
     box-shadow: 5px 5px #516299;
     z-index: 3;
+    background: url('imgs/sandbackground.jpg');
 }
 
 #canvas1 {
@@ -31,7 +32,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #97db98;
+    /*background-color: #97db98;*/
 }
 
 .background {
@@ -42,7 +43,7 @@
     margin: auto;
     z-index: 0;
     background-color: #00ddff;
-  /*  background: url('imgs/background.png')Bottom center/cover no-repeat;*/
+    background: url('imgs/background.png')Bottom center/cover no-repeat;
 }
 
 #canvas2 {
@@ -73,6 +74,15 @@ button {
 
 #next-btn {
     display: none;
+}
+
+#whale {
+    height: 450px;
+    width: 240px;
+    position: absolute;
+    left: -5%;
+    top: -6%;
+    z-index: 5;
 }
 
 /*Guessing*/
@@ -148,14 +158,15 @@ label {
 
 #commentary {
 
-    width: 80%;
+    width: 60%;
     height: 80px;
+    border: 1px solid crimson;
 }
 
 #commentary > img {
     height: 80px;
-    width: 300px;
-    margin-left: 100px;
+    width: 400px;
+    margin-left: 200px;
 }
 
 @keyframes blur {
