@@ -2,8 +2,9 @@
 const wheel = document.getElementById('wheel');
 const startButton = document.getElementById('spin-btn');
 let deg = 0;
+const pointsArr = [300, 250, 750, "Bankrupt", 300, 250, 600, 400, 150, 200, 250, 400, "Lose a Turn", 450, 150, 200, 100, 600, 200, 300, 400, 500, 100, 200]
+let points = 0;
 
-const points = [300, 250, 750, "Bankrupt", 300, 250, 600, 400, 150, 200, 250, 400, "Lose a Turn", 450, 150, 200, 100, 600, 200, 300, 400, 500, 100, 200]
 //Functions
 function spinWheel() {
     startButton.style.pointerEvents = 'none';
@@ -22,8 +23,15 @@ function wheelStopped() {
     console.log( actualDeg);
     let segment = Math.floor(actualDeg / 15);
     console.log(segment);
-    console.log('Points',points[segment]);
-    comment.textContent = `For ${points[segment]} points, GUESS A LETTER!`
+    console.log('Points',pointsArr[segment]);
+    points = pointsArr[segment];
+    if(typeof points === 'number') {
+        comment.textContent = `For ${pointsArr[segment]} points, GUESS A LETTER!`;
+    } else {
+        comment.textContent = `Unlucky spin!`;
+    }
+    guess.focus();
+    
 }
 
 

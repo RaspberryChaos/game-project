@@ -11,7 +11,7 @@ const films = [
     {name:"Pretty Woman", category: "Film"},
     {name:"Reservoir Dogs", category: "Film"},
     {name:"Lilo and Stitch", category: "Film"},
-    {name:"Jurrasic Park", category: "Film"}
+    {name:"Jurassic Park", category: "Film"}
 ];
 
 const books = [

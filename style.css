@@ -9,6 +9,10 @@
     display: flex;
 }
 
+.col {
+    flex-direction: column;
+}
+
 .wrapper {
     border: 5px solid black;
     width: 75%;
@@ -37,6 +41,7 @@
     position: relative;
     margin: auto;
     z-index: 0;
+    background-color: #00ddff;
   /*  background: url('imgs/background.png')Bottom center/cover no-repeat;*/
 }
 
@@ -57,23 +62,41 @@
 
 #mainContent {
     position: absolute;
-    top: 40%;
+    top: 37%;
     width: 100%;
+}
+
+button {
+    padding: 10px;
+    border-radius: 1em;
+}
+
+#next-btn {
+    display: none;
 }
 
 /*Guessing*/
 .guessing {
     justify-content: space-around;
-    flex-direction: column;
+    align-items: center;
     z-index: 10;
     padding: 10px;
     border: 1px solid red;
     width: 30%;
 }
 
+label {
+    text-align: center;
+}
+
+#guess {
+    margin: 5px;
+    width: 100px;
+    font-size: 20px;
+}
+
 /*Players*/
 #players {
-    flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
     border: 1px solid pink;
@@ -83,13 +106,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid green;
     text-align: center;
     margin: 10px;
+    background-color: white;
 }
 
 .active {
-    background-color: blueviolet;
+    border: 5px solid gold;
 }
 
 .avatar {
@@ -107,14 +130,14 @@
 }
 
 #wheel {
-    width: 250px;
+    width: 260px;
     margin: 10px;
 }
 
 #marker {
     height: 50px;
     position: absolute;
-    top: 18%;
+    top: 16%;
     z-index: 6;
 }
 
@@ -124,7 +147,7 @@
 
 
 #commentary {
-    border: 1px solid gold;
+
     width: 80%;
     height: 80px;
 }
@@ -145,4 +168,23 @@
     100% {
         filter: blur(0px);
     }
+}
+
+/*Title Page*/
+.modal {
+    border: 1px solid teal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    background-color: whitesmoke;
+    display: none;
+    transform: translate(-50%,-50%);
+}
+
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }

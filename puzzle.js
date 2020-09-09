@@ -28,32 +28,40 @@ class Puzzle {
               }
     
           }
-        
       }
 
     checkInput(value) {
+        let count;
         if (value.length > 1) {
             guessP.textContent = "Please only guess one letter at a time"
+            comment.textContent = "Please only guess one letter at a time"
           } else if (value.match(/[^a-z]/)) {
             guessP.textContent = "You must guess a letter";
+            comment.textContent = "You must guess a letter";
           } else if (value.match(/[aeiou]/)) {
             guessP.textContent = "You can't guess a vowel. You can buy a vowel for €500.";
+            comment.textContent = "You can't guess a vowel. You can buy a vowel for €500.";
           } else if (this.guessedLetters.indexOf(value) !== -1) {
             guessP.textContent = `${value.toUpperCase()} was already guessed!`;
+            comment.textContent = `${value.toUpperCase()} was already guessed!`;
           } else {
-            this.guessedLetters.push(value);
+                this.guessedLetters.push(value);
 
-            if(this.puzzleArr.includes(value) && this.correctLetters.indexOf(value) === -1) {
-                this.correctLetters.push(value);
-                let count;
-                count = this.consonants.filter(el => el === value).length;
-                guessP.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times!`; 
-                //console.log(this.correctLetters);
-            } else {
-                guessP.textContent = `${guess.value.toUpperCase()} is not in the puzzle`;
-            }
+                if(this.puzzleArr.includes(value) && this.correctLetters.indexOf(value) === -1) {
+                    this.correctLetters.push(value);
+                    count = this.consonants.filter(el => el === value).length;
+                    guessP.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times!`; 
+                    comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times!`; 
+                    //console.log(this.correctLetters);
+                    this.scorePoints(count);
+                } else {
+                    //guessP.textContent = `${guess.value.toUpperCase()} is not in the puzzle`;
+                    comment.textContent = `${guess.value.toUpperCase()} is not in the puzzle`;
+                    nextPlayer();
+                }
                 
-          }
+                }
+        return count;        
     }
 
     displayLetters(i, startPoint) {
@@ -91,29 +99,42 @@ class Puzzle {
     checkCompleted () {
         if(this.uniqueConsonants.length === this.correctLetters.length) {
             console.log("No more consonants... Solve the puzzle!")
-            guessP.textContent = "No more consonants... Solve the puzzle!";
+            //guessP.textContent = "No more consonants... Solve the puzzle!";
+            comment.textContent = "No more consonants... Solve the puzzle!";
             //Block guess Button
         }
+    }
+
+    scorePoints (count) {
+        let pointsScored = count * points;
+        currentPlayer.roundScore += pointsScored;
+        console.log(currentPlayer);
+        console.log(currentPlayer.roundScore);
+        comment.textContent = `${currentPlayer.name} just scored ${pointsScored}.`
+        currentPlayer.displayStats();
     }
 
     solve(guess) {
         if(guess.toLowerCase() === this.name) {
             console.log("You solved the puzzle");
-            guessP.textContent = "You solved the puzzle";
+            //guessP.textContent = "You solved the puzzle";
             //alert("You solved the puzzle");
             round++;
             roundDisplay.textContent = `Round ${round}`;
-            currentPlayer.score += this.bonus;
+            currentPlayer.roundScore += this.bonus;
             this.solved = true;
             this.drawPuzzle();
             solvedMusic.play();
+            comment.textContent = `Well done ${currentPlayer.name}! You solved the puzzle!`;
+            nextBtn.style.display = 'block';
+            currentPlayer.displayStats();
             //Add new game? button or next level
         } else {
             console.log("Try again");
             if(this.bonus > 0) this.bonus -= 200;
             //this.displayBonus();
             console.log(this.bonus);
-            guessP.textContent = "Wrong answer. Try Again.";
+            comment.textContent = "Wrong answer. Try Again.";
         }
     
     }

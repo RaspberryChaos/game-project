@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button><a href="/index.html">Start Game</a></button>
 
+    <h1 class="title">Wheel of Fortune</h1>
+    <div class = "background">
+        <canvas id="canvas2"></canvas>
+        <div class="intro">
+            <button><a href="/index.html">Start Game!</a></button>
+            <button id="rules" onclick="document.getElementById('how-to-play').style.display='block'">How to Play</button>
+        </div>
+    </div>
 
-    
+    <!--How to Play Modal-->
+    <div id="how-to-play" class="modal">
+        <div>
+          <header> 
+            <span onclick="document.getElementById('how-to-play').style.display='none'" >&times;</span>
+            <h2>How to Play</h2>
+          </header>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, dolores?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores deserunt saepe tempora debitis accusantium? Modi?</p>
+          </div>
+          <footer>
+            <button onclick="document.getElementById('how-to-play').style.display='none'">OK!</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

@@ -1,21 +1,37 @@
 class Player {
-    constructor(name, number, myTurn) {
+    constructor(name, number, myTurn, avatar) {
         this.name = name;
         this.number = number;
-        this.score = 0;
+        this.roundScore = 0;
+        this.totalScore = 0;
         this.myTurn = myTurn;
+        this.avatar = avatar
     }
 
     displayStats() {
-        if(this.number === 1) {
-           // p1Div.innerHTML += `<h2>${this.name}</h2>
-            //<p>Score = ${this.score}</p>`;
+
+        let stats = `<img src="imgs/${this.avatar}.png" alt="" class="avatar"> 
+                <div>
+                    <h2>${this.name}</h2>
+                    <p>Round Score = ${this.roundScore}</p>
+                    <hr>
+                    <p>Total Score = ${this.totalScore}</p> 
+                </div> `
+            
+        if (this.number === 1) {
+            p1Div.innerHTML = stats;  
         } else {
-           // p2Div.innerHTML += `<h2>${this.name}</h2>
-            //<p>Score = ${this.score}</p>`;
+            p2Div.innerHTML = stats;
         }
+        console.log('test', this.number);
     }
 
+    updateTotalScore() {
+        this.totalScore += this.roundScore;
+        this.roundScore = 0;
+        this.displayStats();
+    }
+/*
     activePlayer() {
         this.myTurn = true;
         if(this.number === 1) {
@@ -26,4 +42,6 @@ class Player {
             p1Div.classList.remove('active');
         }
     }
+*/
+
 }
