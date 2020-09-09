@@ -9,11 +9,16 @@ canvas.height = 200;
 //Selectors
 const guess = document.getElementById('guess');
 const guessBtn = document.getElementById('guess-btn');
-const guessP = document.querySelector('.guessing p');
+const category = document.getElementById('category');
+const bonus = document.getElementById('bonus');
 const solveBtn = document.getElementById('solve');
 const nextBtn = document.getElementById('next-btn');
 const roundDisplay = document.getElementById('round');
-const comment = document.querySelector('#commentary > p');
+const comment = document.querySelector('.comment');
+const setupBtn = document.getElementById('setup');
+const playerSetup = document.getElementById('player-setup');
+const p1name = document.getElementById('player1name');
+const p2name = document.getElementById('player2name');
 
 //Player Selectors
 const p1Div = document.querySelector('.player1');
@@ -24,12 +29,12 @@ const p2Avatar = document.querySelector('.player2 > img');
 //Audio
 const solvedMusic = document.getElementById('myAudio');
 
-//Set up Players
-const player1 = new Player('Tom', 1, myTurn = true, 'starfish');
-const player2 = new Player('Sam', 2, myTurn = false, 'dolphin');
+
 
 //Initialise Variables
-let currentPlayer = player1;
+let player1;
+let player2;
+let currentPlayer;
 let puzzle; 
 let guessedLetters = [];
 let round = 1;
@@ -49,13 +54,11 @@ window.addEventListener('load', () => {
     let random = Math.floor(Math.random() * films.length);
     puzzle = new Puzzle(films[random]);
     puzzle.drawPuzzle();
-    player1.displayStats();
-    player2.displayStats();
 })
 
 guessBtn.addEventListener('click', () => {
   guess.value = guess.value.toLowerCase();
-  let count = puzzle.checkInput(guess.value);
+  puzzle.checkInput(guess.value);
   puzzle.checkCompleted();
     //console.log(guessedLetters);
     puzzle.drawPuzzle();
@@ -92,6 +95,22 @@ nextBtn.addEventListener('click', () => {
     player1.updateTotalScore();
     player2.updateTotalScore();
 });
+
+const name =  setupBtn.addEventListener('click', () => {
+    playerSetup.style.display = "none";
+    initialisePlayers();
+})
+
+function initialisePlayers() {
+    player1 = new Player(p1name.value, 1, myTurn = true, 'starfish');
+    player2 = new Player(p2name.value, 2, myTurn = false, 'dolphin');
+    player1.displayStats();
+    player2.displayStats();
+    currentPlayer = player1;
+};
+
+//Set up Players
+
 
 //console.log('consonants', puzzle.consonants);
 //console.log('vowels', puzzle.uniqueConsonants);

@@ -7,7 +7,7 @@ class Puzzle {
         this.puzzleArr = this.name.split('');
         this.consonants = this.name.match(/[^aeiou\s]/gi);
         this.uniqueConsonants = this.consonants.filter((val, i, arr) => arr.indexOf(val) === i);
-        this.bonus = 1000;
+        this.bonus = 500;
         this.solved = false;
     }
 
@@ -31,37 +31,32 @@ class Puzzle {
       }
 
     checkInput(value) {
-        let count;
         if (value.length > 1) {
-            //guessP.textContent = "Please only guess one letter at a time"
             comment.textContent = "Please only guess one letter at a time"
-          } else if (value.match(/[^a-z]/)) {
-            //guessP.textContent = "You must guess a letter";
+          } else if (value.match(/[^a-z]/) || value.length === 0) {
             comment.textContent = "You must guess a letter";
           } else if (value.match(/[aeiou]/)) {
-           // guessP.textContent = "You can't guess a vowel. You can buy a vowel for €500.";
             comment.textContent = "You can't guess a vowel. You can buy a vowel for €500.";
           } else if (this.guessedLetters.indexOf(value) !== -1) {
-            //guessP.textContent = `${value.toUpperCase()} was already guessed!`;
             comment.textContent = `${value.toUpperCase()} was already guessed!`;
           } else {
                 this.guessedLetters.push(value);
+                return this.checkLetter(value);
+                }      
+    }
 
-                if(this.puzzleArr.includes(value) && this.correctLetters.indexOf(value) === -1) {
-                    this.correctLetters.push(value);
-                    count = this.consonants.filter(el => el === value).length;
-                    //guessP.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times!`; 
-                    //console.log(this.correctLetters);
-                    let pointsScored = this.scorePoints(count);
-                    comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times! ${currentPlayer.name} just scored ${pointsScored}.`; 
-                } else {
-                    //guessP.textContent = `${guess.value.toUpperCase()} is not in the puzzle`;
-                    nextPlayer();
-                    comment.textContent = `Sorry, ${guess.value.toUpperCase()} is not in the puzzle. ${currentPlayer.name}, spin the wheel!`;
-                }
-                
-                }
-        return count;        
+    checkLetter(value) {
+        let count;
+        if(this.puzzleArr.includes(value) && this.correctLetters.indexOf(value) === -1) {
+            this.correctLetters.push(value);
+            count = this.consonants.filter(el => el === value).length;
+            let pointsScored = this.scorePoints(count);
+            comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times! ${currentPlayer.name} just scored ${pointsScored}.`; 
+        } else {
+            nextPlayer();
+            comment.textContent = `Sorry, ${guess.value.toUpperCase()} is not in the puzzle. ${currentPlayer.name}, spin the wheel!`;
+        }
+        return count;
     }
 
     displayLetters(i, startPoint) {
@@ -83,24 +78,16 @@ class Puzzle {
          }
 
     displayCategory () {
-        ctx.fillStyle = 'black';
-        ctx.strokeStyle = 'black';
-        ctx.font = "20px Verdana";
-        ctx.fillText(`Category: ${this.category}`, 10, 185);
+        category.textContent = `Category: ${this.category}`;
     }
 
     displayBonus () {
-        //ctx.fillStyle = 'black';
-        //ctx.strokeStyle = 'black';
-        //ctx.font = "20px Verdana";
-        //ctx.fillText(`Bonus for solving the puzzle: ${this.bonus}`, 630, 185);
-        guessP.textContent = `Bonus for solving the puzzle: ${this.bonus}`
+        bonus.textContent = `Bonus for solving the puzzle: ${this.bonus}`;
     }
 
     checkCompleted () {
         if(this.uniqueConsonants.length === this.correctLetters.length) {
-            console.log("No more consonants... Solve the puzzle!")
-            //guessP.textContent = "No more consonants... Solve the puzzle!";
+            //console.log("No more consonants... Solve the puzzle!")
             comment.textContent = "No more consonants... Solve the puzzle!";
             //Block guess Button
         }
@@ -118,22 +105,19 @@ class Puzzle {
 
     solve(guess) {
         if(guess.toLowerCase() === this.name) {
-            console.log("You solved the puzzle");
-            //guessP.textContent = "You solved the puzzle";
-            //alert("You solved the puzzle");
             round++;
             roundDisplay.textContent = `Round ${round}`;
             currentPlayer.roundScore += this.bonus;
             this.solved = true;
             this.drawPuzzle();
             solvedMusic.play();
-            comment.textContent = `Well done ${currentPlayer.name}! You solved the puzzle! You win a bonus of ${this.bonus}!`;
+            comment.textContent = `Well done ${currentPlayer.name}! You solved the puzzle! You win a bonus of ${this.bonus}! Click the Next Round button to continue.`;
             nextBtn.style.display = 'block';
             currentPlayer.displayStats();
             //Add new game? button or next level
         } else {
             console.log("Try again");
-            if(this.bonus > 0) this.bonus -= 200;
+            if(this.bonus > 0) this.bonus -= 100;
             this.displayBonus();
             console.log(this.bonus);
             comment.textContent = "Wrong answer. Try Again.";
