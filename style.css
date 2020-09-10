@@ -34,6 +34,12 @@ button {
     
 }
 
+button:disabled {
+    background-color: grey !important;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
 button:hover{
     opacity: 0.8;
 }
@@ -167,7 +173,8 @@ a {
 #guess {
     margin: 5px;
     width: 100px;
-    font-size: 20px;
+    font-size: 30px;
+    text-align: center;
 }
 
 .guess-group {
@@ -424,7 +431,9 @@ a {
     display: flex;
     justify-content: center;
 }
-
+.blinking {
+    animation: blinkingText 1s infinite;
+}
 /*Animations*/
 
 @keyframes blur {
@@ -436,5 +445,18 @@ a {
     }
     100% {
         filter: blur(0px);
+    }
+}
+
+@keyframes blinkingText {
+   
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
     }
 }

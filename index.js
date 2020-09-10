@@ -56,14 +56,12 @@ function disableGuessButtons() {
     guessBtn.disabled = true;
     vowelBtn.disabled = true;
     solveBtn.disabled = true;
-    spinBtn.disabled = false;
 }
 
 function enableGuessButtons() {
     guessBtn.disabled = false;
     vowelBtn.disabled = false;
     solveBtn.disabled = false;
-    spinBtn.disabled = true;
 }
 
 
@@ -73,6 +71,7 @@ window.addEventListener('load', () => {
     puzzle = new Puzzle(films[random]);
     puzzle.drawPuzzle();
     disableGuessButtons();
+    spinText.classList.add('blinking');
 })
 
 guessBtn.addEventListener('click', () => {
@@ -115,6 +114,9 @@ nextBtn.addEventListener('click', () => {
     player2.updateTotalScore();
     vowelBtn.style.display = 'block';
     solveBtn.style.display = 'block';
+    disableGuessButtons();
+    spinBtn.disabled = false;
+    spinText.classList.add('blinking');
 });
 
 setupBtn.addEventListener('click', () => {

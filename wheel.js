@@ -1,22 +1,23 @@
 //Variables
 const wheel = document.getElementById('wheel');
 const spinBtn = document.getElementById('spin-btn');
+const spinText = document.querySelector('#spin-btn > span')
 let deg = 0;
 const pointsArr = [300, 250, 750, "Bankrupt", 300, 250, 600, 400, 150, 200, 250, 400, "Lose a Turn", 450, 150, 200, 100, 600, 200, 300, 400, 500, 100, 200]
 let points = 0;
 
 //Functions
 function spinWheel() {
-    spinBtn.style.pointerEvents = 'none';
     deg = Math.floor(5000 + Math.random() * 2000); //Value between 2000 and 7000
     wheel.style.transition = 'all 5s ease-out'; // ease-out slows wheel down at end
     wheel.style.transform = `rotate(${deg}deg)`;
     wheel.classList.add('.blur');
+    disableGuessButtons();
+    spinText.classList.remove('blinking');
 }
     
 function wheelStopped() {
     wheel.classList.remove('.blur');
-    spinBtn.style.pointerEvents = 'auto';
     wheel.style.transition = 'none';
     const actualDeg = deg % 360;
     wheel.style.transform = `rotate(${actualDeg}deg)`;
@@ -30,22 +31,18 @@ function wheelStopped() {
         enableGuessButtons();
     } else if (points === "Bankrupt") {
         bankrupt.play();
-        comment.textContent = `BANKRUPT! Oh no, you lose all your points for this round! Unlucky!`;
         currentPlayer.roundScore = 0;
         currentPlayer.displayStats();
         nextPlayer();
-        disableGuessButtons();
+        comment.textContent = `BANKRUPT! Oh no, you lose all your points for this round! Unlucky! ${currentPlayer.name} spin the wheel!`;
     } else {
         nextPlayer();
         comment.textContent = `Unlucky spin - Lose a turn! Spin the wheel ${currentPlayer.name}!`;
-        disableGuessButtons();
     }
     guess.focus();
-    
+    spinBtn.disabled= true;
 }
-
-
-   
+  
 //Event Listeners
 
 spinBtn.addEventListener('click', () => {
