@@ -3,8 +3,6 @@ Wheel
 //Create Wheel
 //Make wheel spin
 //Get wheel value
-Add sound
-disable/enable guess button
 //code bankrupt and lose a turn
 
 
@@ -13,11 +11,7 @@ Puzzle
 //Change puzzle when next level button is pressed
 //Display all letters when puzzle is solved
 //Update bonus
-Long puzzles on two lines
-Add more puzzles 
-Add buy a vowel functionality
-enter to guess letter
-play again button
+//Add buy a vowel functionality
 
 
 Players
@@ -27,27 +21,30 @@ Players
 //Update score
 //Add bonus for solving puzzle
 //Display winner after 3 rounds
+//avatars
 
 
-Home Page
-
-Make homepage
 //Find out how to switch between pages
 
-Graphics
 
 Everything
 
-If time
+disable/enable guess button
+enter to guess letter
+play again button
 
+If time
+Add sound
+Add more puzzles 
+Make homepage
 sounds (clapping, wheel spinning)
-avatars
 Add highscore to local storage
 bonus round
 player vs computer
 css animations
 Responsive
 Music
+Long puzzles on two lines
 
 
 

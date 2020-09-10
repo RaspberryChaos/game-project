@@ -52,12 +52,27 @@ function nextPlayer() {
     p2Div.classList.toggle('active');
 }
 
+function disableGuessButtons() {
+    guessBtn.disabled = true;
+    vowelBtn.disabled = true;
+    solveBtn.disabled = true;
+    spinBtn.disabled = false;
+}
+
+function enableGuessButtons() {
+    guessBtn.disabled = false;
+    vowelBtn.disabled = false;
+    solveBtn.disabled = false;
+    spinBtn.disabled = true;
+}
+
 
 //Event Listeners
 window.addEventListener('load', () => {
     let random = Math.floor(Math.random() * films.length);
     puzzle = new Puzzle(films[random]);
     puzzle.drawPuzzle();
+    disableGuessButtons();
 })
 
 guessBtn.addEventListener('click', () => {

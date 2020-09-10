@@ -135,12 +135,13 @@ a {
     position: absolute;
     left: -6%;
     bottom: -4%;
+    z-index: 12;
 }
 
 /*Guessing*/
 .guessing {
     position: absolute;
-    bottom: 8%;
+    bottom: 5%;
     left: 15%;
     justify-content: space-around;
     align-items: center;
@@ -194,7 +195,7 @@ a {
 }
 
 #wheel {
-    width: 300px;
+    width: 280px;
 }
 
 #marker {
@@ -241,7 +242,7 @@ a {
 #players {
     position: absolute;
     right: 2%;
-    bottom: 6%;
+    bottom: 5%;
     justify-content: space-around;
     align-items: flex-end;
    /* border: 1px solid pink;*/
@@ -266,7 +267,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
-    margin: 10px;
+    margin-top: 20px;
     /*background: url(/imgs/sandbackground.jpg);*/
     background: white;
     color:  #2c2c54;

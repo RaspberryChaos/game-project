@@ -52,12 +52,14 @@ class Puzzle {
             count = this.consonants.filter(el => el === value).length;
             let pointsScored = this.scorePoints(count);
             comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times! ${currentPlayer.name} just scored ${pointsScored}.`;
+            disableGuessButtons();
             for(let i = 0; i < count; i++) {
                 ding.play()
             } 
         } else {
             nextPlayer();
             comment.textContent = `Sorry, ${guess.value.toUpperCase()} is not in the puzzle. ${currentPlayer.name}, spin the wheel!`;
+            disableGuessButtons();
         }
         return count;
     }
