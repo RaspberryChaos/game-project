@@ -29,6 +29,7 @@ function wheelStopped() {
     if(typeof points === 'number') {
         comment.textContent = `For ${pointsArr[segment]} points, GUESS A LETTER!`;
         enableGuessButtons();
+        spinBtn.disabled= true;
     } else if (points === "Bankrupt") {
         bankrupt.play();
         currentPlayer.roundScore = 0;
@@ -40,7 +41,6 @@ function wheelStopped() {
         comment.textContent = `Unlucky spin - Lose a turn! Spin the wheel ${currentPlayer.name}!`;
     }
     guess.focus();
-    spinBtn.disabled= true;
 }
   
 //Event Listeners

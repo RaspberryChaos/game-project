@@ -14,6 +14,7 @@ const bonus = document.getElementById('bonus');
 const solveBtn = document.getElementById('solve');
 const vowelBtn = document.getElementById('vowel');
 const buyVowel = document.getElementById('close-buy-vowel');
+const cancelVowel = document.getElementById('cancel-vowel');
 const nextBtn = document.getElementById('next-btn');
 const playAgain = document.getElementById('play-again');
 const roundDisplay = document.getElementById('round');
@@ -147,11 +148,13 @@ vowelBtn.addEventListener('click', () => {
 })
 
 buyVowel.addEventListener('click', () => {
-    console.log('clicked');
     document.getElementById('buy-vowel').style.display = "none";
     const selectedVowel = document.querySelector('input[name = "vowel"]:checked').value;
     puzzle.buyVowel(selectedVowel);
-    console.log('vowel', selectedVowel);
+})
+
+cancelVowel.addEventListener('click', () => {
+    document.getElementById('buy-vowel').style.display = "none";
 })
 
 

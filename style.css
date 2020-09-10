@@ -135,7 +135,7 @@ a {
     color: #2c2c54;;
 }
 
-#whale {
+.whale {
     height: 450px;
     width: 220px;
     position: absolute;
@@ -225,7 +225,7 @@ a {
 /*    border: 1px solid crimson;*/
 }
 
-#commentary > img {
+.speech-bubble {
     height: 80px;
     width: 400px;
     position: absolute;
@@ -333,7 +333,7 @@ a {
     border-right: 1px solid #218c74;;
 }
 
-#player-setup [type=radio] { 
+[type=radio] { 
     position: absolute;
     opacity: 0;
     width: 0;
@@ -374,7 +374,7 @@ a {
     padding: 65px;
 }
 
-[name = vowel] + div {
+.radio-vowels div {
     width: 60px;
     height: 60px;
     background-color:white;
@@ -385,8 +385,15 @@ a {
     color: #218c74;
 }
 
+#cancel-vowel {
+    background-color: #ff5252;
+}
 
 /*Title Page*/
+#how-to-play {
+    display: none;
+}
+
 .modal {
     border: 1px solid #218c74;
     position: absolute;

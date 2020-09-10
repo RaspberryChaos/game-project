@@ -43,7 +43,7 @@
 
 
         <section id="commentary" class="flex">
-            <img src="imgs/bubble.png" alt="Speech Bubble">
+            <img src="imgs/bubble.png" alt="Speech Bubble" class="speech-bubble">
             <div>
                 <p class="comment">Welcome to the game! Good luck!
                     Click 'Spin the Wheel' to start!
@@ -51,7 +51,7 @@
             </div>
         </section>
 
-        <img src="imgs/whale.png" alt="whale" id="whale">
+        <img src="imgs/whale.png" alt="whale" class="whale">
 
         
         <section class="guessing flex col">
@@ -90,29 +90,30 @@
             <h2>Buy a Vowel!</h2>
         </header>
         <div class="flex radio-vowels">
-            <label for="letterA">
+            <label>
                 <input type="radio" name="vowel" value="letterA" checked="checked">
                 <div>A</div>
             </label>
-            <label for="letterE">
+            <label>
                 <input type="radio" name="vowel" value="letterE">
                 <div>E</div>
             </label>
-            <label for="letterI">
+            <label>
                 <input type="radio" name="vowel" value="letterI">
                 <div>I</div>
             </label>
-            <label for="letterO">
+            <label>
                 <input type="radio" name="vowel" value="letterO">
                 <div>O</div>
             </label>
-            <label for="letterU">
+            <label>
                 <input type="radio" name="vowel" value="letterU">
                 <div>U</div>
             </label>
         </div>
         <footer>
             <button id="close-buy-vowel">Buy Vowel for €500</button>
+            <button id="cancel-vowel">Cancel</button>
         </footer>
     </div>
 
