@@ -106,6 +106,10 @@ const name =  setupBtn.addEventListener('click', () => {
     initialisePlayers(avatar1, avatar2);
     console.log(avatar1);
     console.log(avatar2);
+    document.querySelector('.wheel').style.display = "flex";
+    document.querySelector('.guessing').style.display = "block";
+    document.querySelector('.wrapper').style.display = "block";
+    document.getElementById('players').style.display = "block";
 })
 
 function initialisePlayers(avatar1,avatar2) {

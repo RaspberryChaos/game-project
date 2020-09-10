@@ -57,6 +57,7 @@ a {
     background: url('imgs/sandbackground.jpg');
     color:  #2c2c54;
     border-radius: 1rem;
+    display: none;
 }
 
 #canvas1 {
@@ -152,6 +153,7 @@ a {
     border-radius: 1em;
     border: 1px solid #2c2c54;
     box-shadow: 2px 2px #2c2c54;
+    display: none;
 }
 
 .guess-group > label {
@@ -187,6 +189,7 @@ a {
     align-items: center;
     z-index: 5;
    /*border: 1px solid purple;*/
+    display: none;
 }
 
 #wheel {
@@ -241,6 +244,7 @@ a {
     justify-content: space-around;
     align-items: flex-end;
    /* border: 1px solid pink;*/
+   display: none;
 }
 
 .player {
