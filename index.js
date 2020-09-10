@@ -15,6 +15,7 @@ const solveBtn = document.getElementById('solve');
 const vowelBtn = document.getElementById('vowel');
 const buyVowel = document.getElementById('close-buy-vowel');
 const nextBtn = document.getElementById('next-btn');
+const playAgain = document.getElementById('play-again');
 const roundDisplay = document.getElementById('round');
 const comment = document.querySelector('.comment');
 const setupBtn = document.getElementById('setup');
@@ -153,6 +154,10 @@ buyVowel.addEventListener('click', () => {
     console.log('vowel', selectedVowel);
 })
 
+
+playAgain.addEventListener('click', () => {
+    window.location.reload();
+})
 
 
 

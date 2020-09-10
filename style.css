@@ -96,7 +96,7 @@ a {
     transform: translate(-50%,-50%);
 }
 
-#next-btn {
+.btn-continue {
     display: none;
     position: absolute;
     bottom: 3%;

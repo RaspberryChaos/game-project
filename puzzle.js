@@ -146,6 +146,8 @@ class Puzzle {
         player1.totalScore > player2.totalScore ?
             comment.textContent = `Congratulations ${player1.name}! You've won the game!` :
             comment.textContent = `Congratulations ${player2.name}! You've won the game!`;
+
+        playAgain.style.display = 'block';
     }
 
     buyVowel(letterInput) {
