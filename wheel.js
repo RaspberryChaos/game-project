@@ -14,6 +14,7 @@ function spinWheel() {
     wheel.classList.add('.blur');
     disableGuessButtons();
     spinText.classList.remove('blinking');
+    wheelspin.play();
 }
     
 function wheelStopped() {

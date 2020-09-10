@@ -34,6 +34,7 @@ const p2Avatar = document.querySelector('.player2 > img');
 const solvedMusic = document.getElementById('myAudio');
 const bankrupt = document.getElementById('bankrupt');
 const ding = document.getElementById('ding');
+const wheelspin = document.getElementById('wheelspin');
 
 
 
