@@ -31,6 +31,7 @@ const p2Avatar = document.querySelector('.player2 > img');
 //Audio
 const solvedMusic = document.getElementById('myAudio');
 const bankrupt = document.getElementById('bankrupt');
+const ding = document.getElementById('ding');
 
 
 

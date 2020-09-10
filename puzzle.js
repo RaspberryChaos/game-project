@@ -51,7 +51,10 @@ class Puzzle {
             this.correctLetters.push(value);
             count = this.consonants.filter(el => el === value).length;
             let pointsScored = this.scorePoints(count);
-            comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times! ${currentPlayer.name} just scored ${pointsScored}.`; 
+            comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times! ${currentPlayer.name} just scored ${pointsScored}.`;
+            for(let i = 0; i < count; i++) {
+                ding.play()
+            } 
         } else {
             nextPlayer();
             comment.textContent = `Sorry, ${guess.value.toUpperCase()} is not in the puzzle. ${currentPlayer.name}, spin the wheel!`;
@@ -142,11 +145,17 @@ class Puzzle {
     }
 
     buyVowel(letterInput) {
-        console.log(letterInput);
-        const letter = letterInput.slice(-1);
-        //currentPlayer.roundScore -= 500;
-        //guessedLetters.push(letter);
-        //this.displayLetters();
+
+        if (currentPlayer.roundScore > 500) {
+            const letter = letterInput.slice(-1).toLowerCase();
+            currentPlayer.roundScore -= 500;
+            this.guessedLetters.push(letter);
+            this.drawPuzzle();
+            currentPlayer.displayStats();
+        }
+        else {
+            comment.textContent = `You need to have a round score of at least €500 to buy a vowel`;
+        }
     }
 }
 
