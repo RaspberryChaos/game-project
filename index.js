@@ -13,6 +13,7 @@ const category = document.getElementById('category');
 const bonus = document.getElementById('bonus');
 const solveBtn = document.getElementById('solve');
 const vowelBtn = document.getElementById('vowel');
+const buyVowel = document.getElementById('close-buy-vowel');
 const nextBtn = document.getElementById('next-btn');
 const roundDisplay = document.getElementById('round');
 const comment = document.querySelector('.comment');
@@ -29,6 +30,7 @@ const p2Avatar = document.querySelector('.player2 > img');
 
 //Audio
 const solvedMusic = document.getElementById('myAudio');
+const bankrupt = document.getElementById('bankrupt');
 
 
 
@@ -99,7 +101,7 @@ nextBtn.addEventListener('click', () => {
     solveBtn.style.display = 'block';
 });
 
-const name =  setupBtn.addEventListener('click', () => {
+setupBtn.addEventListener('click', () => {
     playerSetup.style.display = "none";
     const avatar1 = document.querySelector('input[name = "avatar1"]:checked').value;
     const avatar2 = document.querySelector('input[name = "avatar2"]:checked').value;
@@ -113,17 +115,26 @@ const name =  setupBtn.addEventListener('click', () => {
 })
 
 function initialisePlayers(avatar1,avatar2) {
-    player1 = new Player(p1name.value, 1, myTurn = true, avatar1);
-    player2 = new Player(p2name.value, 2, myTurn = false, avatar2);
+    player1 = new Player(p1name.value, 1, avatar1);
+    player2 = new Player(p2name.value, 2, avatar2);
     player1.displayStats();
     player2.displayStats();
     currentPlayer = player1;
 };
 
-//Set up Players
+vowelBtn.addEventListener('click', () => {
+    console.log("clicked");
+    document.getElementById('buy-vowel').style.display = "block";
+})
+
+buyVowel.addEventListener('click', () => {
+    console.log('clicked');
+    document.getElementById('buy-vowel').style.display = "none";
+    const selectedVowel = document.querySelector('input[name = "vowel"]:checked').value;
+    puzzle.buyVowel(selectedVowel);
+    console.log('vowel', selectedVowel);
+})
 
 
-//console.log('consonants', puzzle.consonants);
-//console.log('vowels', puzzle.uniqueConsonants);
 
 

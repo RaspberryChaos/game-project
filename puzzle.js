@@ -119,15 +119,7 @@ class Puzzle {
                 nextBtn.style.display = 'block';
                 currentPlayer.displayStats();
             } else {
-                roundDisplay.textContent = `Game Over!`;
-                player1.updateTotalScore();
-                player2.updateTotalScore();
-                player1.displayStats();
-                player2.displayStats();
-                
-                player1.totalScore > player2.totalScore ?
-                    comment.textContent = `Congratulations ${player1.name}! You've won the game!` :
-                    comment.textContent = `Congratulations ${player2.name}! You've won the game!`;
+                this.gameOver();
             }
             
         } else {
@@ -135,7 +127,26 @@ class Puzzle {
             this.displayBonus();
             comment.textContent = "Wrong answer. Try Again.";
         }
-    
+    }
+
+    gameOver() {
+        roundDisplay.textContent = `Game Over!`;
+        player1.updateTotalScore();
+        player2.updateTotalScore();
+        player1.displayStats();
+        player2.displayStats();
+                
+        player1.totalScore > player2.totalScore ?
+            comment.textContent = `Congratulations ${player1.name}! You've won the game!` :
+            comment.textContent = `Congratulations ${player2.name}! You've won the game!`;
+    }
+
+    buyVowel(letterInput) {
+        console.log(letterInput);
+        const letter = letterInput.slice(-1);
+        //currentPlayer.roundScore -= 500;
+        //guessedLetters.push(letter);
+        //this.displayLetters();
     }
 }
 

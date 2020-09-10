@@ -28,6 +28,7 @@ function wheelStopped() {
     if(typeof points === 'number') {
         comment.textContent = `For ${pointsArr[segment]} points, GUESS A LETTER!`;
     } else if (points === "Bankrupt") {
+        bankrupt.play();
         comment.textContent = `BANKRUPT! Oh no, you lose all your points for this round! Unlucky!`;
         currentPlayer.roundScore = 0;
         currentPlayer.displayStats();

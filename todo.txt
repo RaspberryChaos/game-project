@@ -17,6 +17,7 @@ Long puzzles on two lines
 Add more puzzles 
 Add buy a vowel functionality
 enter to guess letter
+play again button
 
 
 Players
@@ -25,13 +26,13 @@ Players
 //Calculate points
 //Update score
 //Add bonus for solving puzzle
-Display winner after 3 rounds
+//Display winner after 3 rounds
 
 
 Home Page
 
 Make homepage
-Find out how to switch between pages
+//Find out how to switch between pages
 
 Graphics
 
@@ -44,7 +45,9 @@ avatars
 Add highscore to local storage
 bonus round
 player vs computer
-
+css animations
+Responsive
+Music
 
 
 

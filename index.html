@@ -10,8 +10,12 @@
 <body>
 
     <audio id="myAudio">
-        <source src="sounds/Puzzle solve.mp3" type="audio/mpeg">
+        <source src="sounds/puzzle-solve.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
+    </audio>
+    <audio id="bankrupt">
+        <source src="sounds/bankrupt.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
     </audio>
 
     <h1 class="title">Whale of Fortune</h1>
@@ -33,7 +37,7 @@
 
 
         <section id="commentary" class="flex">
-            <img src="imgs/bubble.png" alt="">
+            <img src="imgs/bubble.png" alt="Speech Bubble">
             <div>
                 <p class="comment">Welcome to the game! Good luck!
                     Click 'Spin the Wheel' to start!
@@ -54,7 +58,7 @@
         </section>
     
         <section class="wheel">
-            <img id="marker" src="imgs/marker.png" />
+            <img id="marker" src="imgs/marker.png" alt="marker">
             <img id="wheel" src="imgs/wheel.png" alt="wheel">
         </section>
     
@@ -73,6 +77,38 @@
             </div>
         </section>
 </div>
+
+    <!--Buy a vowel Modal-->
+    <div id="buy-vowel" class="modal">
+        <header>
+            <h2>Buy a Vowel!</h2>
+        </header>
+        <div class="flex radio-vowels">
+            <label for="letterA">
+                <input type="radio" name="vowel" value="letterA" checked="checked">
+                <div>A</div>
+            </label>
+            <label for="letterE">
+                <input type="radio" name="vowel" value="letterE">
+                <div>E</div>
+            </label>
+            <label for="letterI">
+                <input type="radio" name="vowel" value="letterI">
+                <div>I</div>
+            </label>
+            <label for="letterO">
+                <input type="radio" name="vowel" value="letterO">
+                <div>O</div>
+            </label>
+            <label for="letterU">
+                <input type="radio" name="vowel" value="letterU">
+                <div>U</div>
+            </label>
+        </div>
+        <footer>
+            <button id="close-buy-vowel">Buy Vowel for €500</button>
+        </footer>
+    </div>
 
 
     <!--Player Setup Modal-->

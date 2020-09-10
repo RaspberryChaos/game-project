@@ -126,6 +126,7 @@ a {
     text-align: center;
     font-size: 3.5rem;
     letter-spacing: 1rem;
+    color: #2c2c54;;
 }
 
 #whale {
@@ -324,7 +325,7 @@ a {
     border-right: 1px solid #218c74;;
 }
 
-[type=radio] { 
+#player-setup [type=radio] { 
     position: absolute;
     opacity: 0;
     width: 0;
@@ -339,6 +340,43 @@ a {
     outline: 3px solid gold;
     border: none;
   }
+  [type=radio]:checked + div {
+    outline: 3px solid gold;
+    border: none;
+  }
+
+  [type=radio]:checked + label {
+    outline: 3px solid gold;
+    border: none;
+  }
+
+  /*Buy Vowel*/
+
+  #buy-vowel {
+      display: none;
+  }
+
+  #buy-vowel label {
+      font-size: 30px;
+      font-weight: 600;
+  }
+
+.radio-vowels {
+    justify-content: space-between;
+    padding: 65px;
+}
+
+[name = vowel] + div {
+    width: 60px;
+    height: 60px;
+    background-color:white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #218c74;
+}
+
 
 /*Title Page*/
 .modal {
@@ -347,8 +385,9 @@ a {
     top: 50%;
     left: 50%;
     width: 40%;
+    z-index: 20;
 
-   /* display: none;*/
+    /*display: none;*/
     transform: translate(-50%,-50%);
     padding: 15px;
     background-color: #C0CEF3;
@@ -378,6 +417,11 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+.modal footer {
+    display: flex;
+    justify-content: center;
 }
 
 /*Animations*/
