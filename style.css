@@ -115,7 +115,6 @@ a {
 .background {
     width: 90%;
     height: 90vh;
-    border: 2px solid green;
     position: relative;
     margin: auto;
     z-index: 0;
@@ -306,6 +305,17 @@ a {
     margin: 10px;
 }
 
+.white {
+    color: white;
+    animation: fadeIn 8s linear;
+    opacity: 1;
+}
+
+#fadeOut {
+    animation: fadeOut 8s linear;
+    opacity: 0;
+}
+
 
 /*Setup Modal*/
 #player-setup {
@@ -392,6 +402,18 @@ a {
 /*Title Page*/
 #how-to-play {
     display: none;
+    height: 60vh;
+    overflow: auto;
+}
+
+#how-to-play h4,h3 {
+    color: #218c74;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#how-to-play footer {
+    margin-top: 20px;
 }
 
 .modal {
@@ -429,7 +451,7 @@ a {
 
 .intro {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -441,6 +463,23 @@ a {
 .blinking {
     animation: blinkingText 1s infinite;
 }
+
+#whale-title {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    height: 400px;
+}
+
+#wheel-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+
+}
+
 /*Animations*/
 
 @keyframes blur {
@@ -467,3 +506,27 @@ a {
         opacity: 1;
     }
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
