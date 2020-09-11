@@ -5,225 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wheel of Fortune</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./media.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <audio id="myAudio">
-        <source src="./sounds/puzzle-solve.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <audio id="bankrupt">
-        <source src="./sounds/bankrupt.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-    </audio>
-    <audio id="ding">
-        <source src="./sounds/ding.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-    </audio>
-    <audio id="wheelspin">
-        <source src="./sounds/wheel-spin.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-    </audio>
-
-    <h1 class="title">Whale of Fortune</h1>
-
-    <div class="wrapper">
-        <canvas id="canvas1"></canvas>
-        <p id="round">Round 1</p>
-        <p id="category"></p>
-        <p id="bonus"></p>
-        <button id="next-btn" class="btn-continue">Next Round</button>
-        <button id="play-again" class="btn-continue">Play Again?</button>
-        <div class="btns flex center">
-            <button id="vowel">Buy a Vowel: €500</button>
-            <button id="solve">Solve the Puzzle!</button>
-        </div>
-    </div>
-
-    <div class = "background">
+    <h1 id="fadeOut" class="title">Wheel of Fortune</h1>
+    <div id="main-content" class = "background">
+        <h1 class="title white">Whale of Fortune</h1>
         <canvas id="canvas2"></canvas>
+        <img src="./imgs/whale.png" alt="whale" id="whale-title">
+        <img src="./imgs/wheel.png" alt="wheel" id="wheel-title">
+        <div class="intro">
+            <button><a href="./game.html">Start Game!</a></button>
+            <button id="rules" onclick="document.getElementById('how-to-play').style.display='block'">How to Play</button>
+        </div>
+    </div>
 
+    <!--How to Play Modal-->
+    <div id="how-to-play" class="modal">
+          <header> 
+            <span onclick="document.getElementById('how-to-play').style.display='none'" >&times;</span>
+            <h2>How to Play</h2>
+          </header>
+          <div>
+            <h3>Welcome to Whale of Fortune!</h3>
+            <p>It's like Wheel of Fortune, but underwater and with added sea creatures - what's not to love!</p>
+            <p>This is a game for 2 players. Click the 'Start' button to begin, then each player will be asked to enter their name and choose an avatar. Then it's time for the fun to begin!</p>
+            <p>The aim of the game is to solve the puzzle at the top of the screen. The category of the puzzle is shown just underneath.</p>
+            
+            <h4>Spin the wheel, guess a letter</h4>
+            <p>When it is your turn you will spin the wheel then guess a letter to see if it appears in the puzzle. You can only guess consonants. The wheel will spin and stop at a random value and if you guess a letter correctly you will win that many points for each time that particular letter appears in the puzzle.</p>
+            <p>If you guess a letter correctly, you can spin the again and guess another letter until you have a wrong answer.If you guess a wrong letter, it will be the next players turn.</p>
+            
+            <h4>Solve the puzzle</h4>
+            <p>When you know the answer, you can solve the puzzle by clicking the 'Solve Puzzle' button. If your answer is correct you will win the bonus shown to the bottom right of the puzzle. The bonus will decrease by €100 each time there is a wrong answer. You will then proceed to next next round. The player who won the last round is still the active player.</p>
+            <p>Player 1 goes first. Click the 'Spin the Wheel' button to begin.</p>
 
-        <section id="commentary" class="flex">
-            <img src="imgs/bubble.png" alt="Speech Bubble" class="speech-bubble">
-            <div>
-                <p class="comment">Welcome to the game! Good luck!
-                    Click 'Spin the Wheel' to start!
-                </p>
-            </div>
-        </section>
+            <h4>Buy a Vowel</h4>
+            <p>If you are stuck, you can buy a vowel. This will cost €500 from your round score. You can only do this when your round score is more than €500.</p>
 
-        <img src="imgs/whale.png" alt="whale" class="whale">
+            <h4>Lose a Turn</h4>
+            <p>If the wheel lands on lose a turn, it is the next player's turn.You do not get to guess a letter or score any points.</p>
 
+            <h4>Bankrupt</h4>
+            <p>Oh no! If the wheel lands on bankrupt, you will lose all the money from your round score. The money in your total score is still safe however.</p>
+
+            <h4>Winning</h4>
+            <p>The winner is the player with the highest total score after 3 rounds.</p>
         
-        <section class="guessing flex col">
-            <div class="flex col center guess-group">
-                <label for="guess">Guess a Letter!</label>
-                <input type="text" name="guess" id="guess">
-                <button id="guess-btn">Guess!</button>
-            </div>
-            <button id="spin-btn"><span>Spin the Wheel!</span></button>
-        </section>
-    
-        <section class="wheel">
-            <img id="marker" src="imgs/marker.png" alt="marker">
-            <img id="wheel" src="imgs/wheel.png" alt="wheel">
-        </section>
-    
-        <section id="players" class="flex col">
-            <div class="player player1 active">
-                <img src="imgs/starfish.png" alt="" class="avatar"> 
-         <!--      <div>
-                    <h2>Player 1</h2>
-                    <p>Round Score = 0</p>
-                    <hr>
-                    <p>Total Score = 0</p> 
-                </div>  --> 
-            </div>
-            <div class="player player2">
-                <img src="imgs/dolphin.png" alt="" class="avatar">
-            </div>
-        </section>
-</div>
-
-    <!--Buy a vowel Modal-->
-    <div id="buy-vowel" class="modal">
-        <header>
-            <h2>Buy a Vowel!</h2>
-        </header>
-        <div class="flex radio-vowels">
-            <label>
-                <input type="radio" name="vowel" value="letterA" checked="checked">
-                <div>A</div>
-            </label>
-            <label>
-                <input type="radio" name="vowel" value="letterE">
-                <div>E</div>
-            </label>
-            <label>
-                <input type="radio" name="vowel" value="letterI">
-                <div>I</div>
-            </label>
-            <label>
-                <input type="radio" name="vowel" value="letterO">
-                <div>O</div>
-            </label>
-            <label>
-                <input type="radio" name="vowel" value="letterU">
-                <div>U</div>
-            </label>
         </div>
-        <footer>
-            <button id="close-buy-vowel">Buy Vowel for €500</button>
-            <button id="cancel-vowel">Cancel</button>
-        </footer>
+          <footer>
+            <button onclick="document.getElementById('how-to-play').style.display='none'">OK!</button>
+          </footer>
     </div>
-
-
-    <!--Player Setup Modal-->
-    <div id="player-setup" class="modal flex col">
-        <header> 
-            <span onclick="document.getElementById('player-setup').style.display='none'" >&times;</span>
-            <h2>Who is Playing the Game?</h2>
-        </header>
-        <div class="flex">
-            <div class="player border-right">
-                <div class="flex col center">
-                    <h3>Player 1</h3>
-                    <label for="player1name">Enter your name</label>
-                    <input type="text" name="player1name" id="player1name" value="Player 1">
-                    <h4>Choose your Avatar</h4>
-                    <div class="avatars">
-                        <label>
-                            <input type="radio" name="avatar1" value="starfish" checked="checked">
-                            <img src="imgs/starfish.png" alt="Starfish">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="puffer-fish">
-                            <img src="imgs/puffer-fish.png" alt="Puffer Fish">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="purple-fish">    
-                            <img src="imgs/purple-fish.png" alt="Purple Fish">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="shark">  
-                            <img src="imgs/shark.png" alt="Shark">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="octopus">    
-                            <img src="imgs/octopus.png" alt="Octopus">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="dolphin">
-                            <img src="imgs/dolphin.png" alt="Dolphin">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="crab">    
-                            <img src="imgs/crab.png" alt="Crab">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar1" value="seahorse">
-                            <img src="imgs/seahorse.png" alt="Seahorse">
-                        </label> 
-                    </div>
-                </div>  
-            </div>
-            <div class="player">
-                <div class="flex col center">
-                    <h3>Player 2</h3>
-                    <label for="player2name">Enter your name</label>
-                    <input type="text" name="player2name" id="player2name" value="Player 2">
-                    <h4>Choose your Avatar</h4>
-                    <div class="avatars">
-                        <label>
-                            <input type="radio" name="avatar2" value="starfish" >
-                            <img src="imgs/starfish.png" alt="Starfish">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="puffer-fish">
-                            <img src="imgs/puffer-fish.png" alt="Puffer Fish">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="purple-fish">    
-                            <img src="imgs/purple-fish.png" alt="Purple Fish">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="shark">  
-                            <img src="imgs/shark.png" alt="Shark">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="octopus" checked="checked">    
-                            <img src="imgs/octopus.png" alt="Octopus">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="dolphin">
-                            <img src="imgs/dolphin.png" alt="Dolphin">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="crab">    
-                            <img src="imgs/crab.png" alt="Crab">
-                        </label>
-                        <label>
-                            <input type="radio" name="avatar2" value="seahorse">    
-                            <img src="imgs/seahorse.png" alt="Seahorse">
-                        </label>    
-                    </div>
-                </div> 
-            </div>
-        </div>
-        <footer>
-            <button id="setup">OK, Let's Play!</button>
-        </footer>
-    </div>
-
-    <script src="data.js"></script>
-    <script src="wheel.js"></script>
-    <script src="puzzle.js"></script>
-    <script src="player.js"></script>
-    <script src="index.js"></script>
-    <script src="animations.js"></script>
 </body>
 </html>
