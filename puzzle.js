@@ -52,9 +52,7 @@ class Puzzle {
             count = this.consonants.filter(el => el === value).length;
             let pointsScored = this.scorePoints(count);
             comment.textContent = `${guess.value.toUpperCase()} is in the puzzle ${count} times! ${currentPlayer.name} just scored ${pointsScored}.`;
-            for(let i = 0; i < count; i++) {
-                ding.play()
-            } 
+            ding.play();
             guessBtn.disabled = true;
         } else {
             nextPlayer();
@@ -132,7 +130,8 @@ class Puzzle {
         } else {
             if(this.bonus > 0) this.bonus -= 100;
             this.displayBonus();
-            comment.textContent = "Wrong answer. Try Again.";
+            nextPlayer();
+            comment.textContent = `Sorry, wrong answer! ${currentPlayer.name}, it's your turn. Spin the wheel!`;
         }
     }
 

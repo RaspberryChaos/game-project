@@ -11,7 +11,13 @@ const films = [
     {name:"Pretty Woman", category: "Film"},
     {name:"Reservoir Dogs", category: "Film"},
     {name:"Lilo and Stitch", category: "Film"},
-    {name:"Jurassic Park", category: "Film"}
+    {name:"Jurassic Park", category: "Film"},
+    {name:"Zoolander", category: "Film"},
+    {name:"Taxi Driver", category: "Film"},
+    {name:"Zoolander", category: "Film"},
+    {name:"Rear Window", category: "Film"},
+    {name:"Inception", category: "Film"},
+    {name:"The Hangover", category: "Film"}
 ];
 
 const books = [
@@ -19,7 +25,13 @@ const books = [
     {name: "Animal Farm", category: "Book"},
     {name: "Of Mice and Men", category: "Book"},
     {name: "The Little Prince", category: "Book"},
-    {name: "Gone Girl", category: "Book"}
+    {name: "Gone Girl", category: "Book"},
+    {name: "Moby Dick", category: "Book"},
+    {name: "Frankenstein", category: "Book"},
+    {name: "Oliver Twist", category: "Book"},
+    {name: "Les Miserables", category: "Book"},
+    {name: "Little Women", category: "Book"},
+    {name: "Matilda", category: "Book"}
 ];
 
 const mixed = [
@@ -32,6 +44,7 @@ const mixed = [
     {name: "Cersei Lannister", category: "Fictional Character"},
     {name: "Bart Simpson", category: "Fictional Character"},
     {name: "Luke Skywalker", category: "Fictional Character"},
+    {name: "Mary Poppins", category: "Fictional Character"},
     {name: "George Clooney", category: "Actor"},
     {name: "Nicole Kidman", category: "Actor"},
     {name: "Hot Chocolate", category: "Food and Drink"},

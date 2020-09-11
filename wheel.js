@@ -36,7 +36,7 @@ function wheelStopped() {
         currentPlayer.roundScore = 0;
         currentPlayer.displayStats();
         nextPlayer();
-        comment.textContent = `BANKRUPT! Oh no, you lose all your points for this round! Unlucky! ${currentPlayer.name} spin the wheel!`;
+        comment.textContent = `BANKRUPT! Oh no, you lose all your points for this round! Unlucky! ${currentPlayer.name}, spin the wheel!`;
     } else {
         nextPlayer();
         comment.textContent = `Unlucky spin - Lose a turn! Spin the wheel ${currentPlayer.name}!`;

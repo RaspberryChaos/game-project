@@ -53,6 +53,7 @@ function nextPlayer() {
     currentPlayer === player1 ? currentPlayer = player2 : currentPlayer = player1;
     p1Div.classList.toggle('active');
     p2Div.classList.toggle('active');
+    spinText.classList.add('blinking');
 }
 
 function disableGuessButtons() {

@@ -228,16 +228,15 @@ a {
     height: 80px;
     width: 400px;
     position: absolute;
-    left: 18%;
+    left: 15%;
 }
 
 #commentary > div {
     display: flex;
     position: absolute;
     height: 80px;
-    width: 300px;
-    left: 23%;
-  /*  border: 1px solid purple;*/
+    width: 328px;
+    left: 21%;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -307,12 +306,12 @@ a {
 
 .white {
     color: white;
-    animation: fadeIn 8s linear;
+    animation: fadeIn 6s linear;
     opacity: 1;
 }
 
 #fadeOut {
-    animation: fadeOut 8s linear;
+    animation: fadeOut 6s linear;
     opacity: 0;
 }
 
