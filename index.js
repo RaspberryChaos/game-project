@@ -134,6 +134,8 @@ setupBtn.addEventListener('click', () => {
     document.querySelector('.guessing').style.display = "block";
     document.querySelector('.wrapper').style.display = "block";
     document.getElementById('players').style.display = "block";
+    document.querySelector('.speech-bubble').style.display = "block";
+    document.querySelector('#commentary > div').style.display = "flex";
 })
 
 function initialisePlayers(avatar1,avatar2) {

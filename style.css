@@ -143,6 +143,13 @@ a {
     z-index: 12;
 }
 
+#whale-title {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    height: 450px;
+    width: 220px;
+}
 /*Guessing*/
 .guessing {
     position: absolute;
@@ -229,6 +236,7 @@ a {
     width: 400px;
     position: absolute;
     left: 15%;
+    display: none;
 }
 
 #commentary > div {
@@ -241,6 +249,7 @@ a {
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    display: none;
 }
 
 /*Players Section*/
@@ -463,12 +472,6 @@ a {
     animation: blinkingText 1s infinite;
 }
 
-#whale-title {
-    position: absolute;
-    left: 5%;
-    bottom: 0;
-    height: 400px;
-}
 
 #wheel-title {
     position: absolute;
